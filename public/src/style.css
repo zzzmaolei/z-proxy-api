@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: "Segoe UI Variable", "Microsoft YaHei UI", system-ui, sans-serif; font-synthesis: none; color: #17243b; background: #eef2ff; }
+html { min-height: 100%; background: #eef2ff; }
+body { min-width: 320px; min-height: 100dvh; margin: 0; }
+button, input, select, textarea { font: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid rgba(101,116,228,.42); outline-offset: 2px; }

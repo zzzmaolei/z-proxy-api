@@ -1,0 +1,26 @@
+/** API Key 验证路由 — POST /verify 验证密钥有效性 */
+
+const express = require('express')
+const router = express.Router()
+const config = require('../config/index.js')
+const { validateApiKey } = require('../middlewares/authorization')
+
+router.post('/verify', (req, res) => {
+  const apiKey = req.body.apiKey
+  const { isValid, isAdmin } = validateApiKey(apiKey)
+
+  if (!isValid) {
+    return res.status(401).json({
+      status: 401,
+      message: 'Unauthorized'
+    })
+  }
+
+  res.status(200).json({
+    status: 200,
+    message: 'success',
+    isAdmin: isAdmin
+  })
+})
+
+module.exports = router

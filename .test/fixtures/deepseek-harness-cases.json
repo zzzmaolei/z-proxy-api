@@ -1,0 +1,73 @@
+[
+  {
+    "id": "hermes-normal-auto",
+    "client": "hermes-agent",
+    "route": "/v1/chat/completions",
+    "stream": true,
+    "tool_choice": "auto",
+    "reasoning_effort": "high",
+    "tools": ["read_file", "bash"],
+    "messages": [
+      { "role": "user", "content": "What model are you?" }
+    ],
+    "fragments": [
+      { "channel": "thinking", "text": "No tool is required." },
+      { "channel": "response", "text": "I am the configured DeepSeek Web model." }
+    ],
+    "expected": { "responseToolCalls": 0, "thinkingToolCalls": 0, "semanticRetry": false }
+  },
+  {
+    "id": "hermes-function-style-response",
+    "client": "hermes-agent",
+    "route": "/v1/chat/completions",
+    "stream": false,
+    "tool_choice": "auto",
+    "tools": ["read_file"],
+    "messages": [
+      { "role": "user", "content": "Read the requested file." }
+    ],
+    "fragments": [
+      { "channel": "response", "text": "read_file({\"filePath\":\"C:\\\\fixture\\\\case.txt\"})" }
+    ],
+    "expected": { "responseToolCalls": 1, "thinkingToolCalls": 0, "toolName": "read_file" }
+  },
+  {
+    "id": "hermes-function-style-thinking-only",
+    "client": "hermes-agent",
+    "route": "/v1/chat/completions",
+    "stream": true,
+    "tool_choice": "auto",
+    "tools": ["read_file"],
+    "messages": [
+      { "role": "user", "content": "Decide whether a file is needed." }
+    ],
+    "fragments": [
+      { "channel": "thinking", "text": "read_file({\"filePath\":\"C:\\\\fixture\\\\case.txt\"})" },
+      { "channel": "response", "text": "A file is not needed for this question." }
+    ],
+    "expected": { "responseToolCalls": 0, "thinkingToolCalls": 0, "semanticRetry": false }
+  },
+  {
+    "id": "opencode-responses-continuation",
+    "client": "opencode",
+    "route": "/v1/responses",
+    "stream": true,
+    "previous_response_id": "resp_fixture_previous",
+    "input": [
+      { "type": "function_call_output", "call_id": "call_fixture_read", "output": "redacted fixture output" }
+    ],
+    "tools": ["read_file"],
+    "expected": { "continuation": true, "toolResultCount": 1, "previousIdIsRedacted": true }
+  },
+  {
+    "id": "claude-over-budget-history",
+    "client": "claude-code",
+    "route": "/v1/messages",
+    "stream": false,
+    "tool_choice": { "type": "auto" },
+    "messageCount": 14,
+    "promptBytes": 205000,
+    "hasToolHistory": true,
+    "expected": { "budgetStatus": "hard_limit", "upstreamCalls": 0 }
+  }
+]

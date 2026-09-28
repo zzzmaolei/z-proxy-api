@@ -1,0 +1,23 @@
+{
+  "dpskRoutingStrategy": "round-robin",
+  "minPacingIntervalMs": 5000,
+  "cooldownMs": 0,
+  "maxRetries": 3,
+  "defaultThinkingEnabled": true,
+  "dpskMaxConcurrencyPerAccount": 1,
+  "dpskGlobalMaxConcurrency": 50,
+  "dpskMaxQueueSize": 150,
+  "dpskQueueTimeoutMs": 120000,
+  "dpskThinkEffort": "high",
+  "dpskEnableToolHistoryCompression": false,
+  "dpskEnableSessionContinuity": false,
+  "dpskSessionAffinity": false,
+  "chatRetryCount": 3,
+  "chatRetryBackoffMs": 400,
+  "outThink": true,
+  "simpleModelMap": false,
+  "searchInfoMode": "table",
+  "autoRefresh": true,
+  "autoRefreshInterval": 21600,
+  "batchLoginConcurrency": 5
+}

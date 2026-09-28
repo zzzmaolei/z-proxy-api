@@ -1,0 +1,48 @@
+[
+  {
+    "id": "dpsk-account-01",
+    "email": "user1@example.com",
+    "password": "your_password_here",
+    "token": "your_deepseek_user_token_here",
+    "status": "active",
+    "enabled": true,
+    "created_at": "2025-01-01T00:00:00.000Z",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "userId": "10000001",
+    "mutedUntil": null,
+    "proxy": null,
+    "lastUsed": 0,
+    "stats": {
+      "chat": {
+        "input": 0,
+        "output": 0,
+        "requests": 0,
+        "byProvider": {},
+        "byModel": {}
+      }
+    }
+  },
+  {
+    "id": "dpsk-account-02",
+    "email": "user2@example.com",
+    "password": "your_password_here",
+    "token": "your_deepseek_user_token_here",
+    "status": "active",
+    "enabled": true,
+    "created_at": "2025-01-01T00:00:00.000Z",
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "userId": "10000002",
+    "mutedUntil": null,
+    "proxy": "http://127.0.0.1:7890",
+    "lastUsed": 0,
+    "stats": {
+      "chat": {
+        "input": 0,
+        "output": 0,
+        "requests": 0,
+        "byProvider": {},
+        "byModel": {}
+      }
+    }
+  }
+]

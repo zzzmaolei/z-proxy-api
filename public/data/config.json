@@ -1,0 +1,4 @@
+{
+  "dpskRoutingStrategy": "round-robin",
+  "chatRetryCount": 3
+}

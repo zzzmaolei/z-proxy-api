@@ -1,0 +1,46 @@
+{
+  "defaultHeaders": null,
+  "defaultCookie": null,
+  "accounts": [
+    {
+      "id": "qwen-account-01",
+      "email": "user1@example.com",
+      "password": "your_password_here",
+      "token": "your_qwen_bearer_token_here",
+      "cookie": "login_aliyunid_ticket=your_ticket_here; login_aliyunid_csrf=_csrf_token_here",
+      "status": "active",
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "expires": null,
+      "proxy": null,
+      "stats": {
+        "chat": {
+          "input": 0,
+          "output": 0,
+          "requests": 0,
+          "byProvider": {},
+          "byModel": {}
+        }
+      }
+    },
+    {
+      "id": "qwen-account-02",
+      "email": "user2@example.com",
+      "password": "your_password_here",
+      "token": "your_qwen_bearer_token_here",
+      "cookie": "login_aliyunid_ticket=your_ticket_here; login_aliyunid_csrf=_csrf_token_here",
+      "status": "active",
+      "created_at": "2025-01-01T00:00:00.000Z",
+      "expires": null,
+      "proxy": "http://127.0.0.1:7890",
+      "stats": {
+        "chat": {
+          "input": 0,
+          "output": 0,
+          "requests": 0,
+          "byProvider": {},
+          "byModel": {}
+        }
+      }
+    }
+  ]
+}
